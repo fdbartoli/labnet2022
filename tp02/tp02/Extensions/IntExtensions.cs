@@ -13,7 +13,12 @@ namespace tp02.Extensions
         {
             return number / 0;       
 
-        }       
-
+        }   
+        
+        public static float division (this float dividendo, float divisor)
+        {
+            return dividendo / divisor;
+        }
+            
     }
 } 

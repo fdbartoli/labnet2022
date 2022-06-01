@@ -14,17 +14,20 @@ namespace tp02.Extensions.Tests
         [TestMethod()]
         public void DivisionTest()
         {
-            float expectedResult = 5;
-            float dividendo = 10;
-            float actualResult = dividendo.Division(2);
+            int expectedResult = 5;
+            int dividendo = 10;
+            decimal actualResult = dividendo.Division(2);
 
             Assert.AreEqual(expectedResult, actualResult);
         }
 
-        //[TestMethod()]
-        //public void DivideByZeroTest()
-        //{
-            
-        //}
+        [TestMethod()]
+        [ExpectedException(typeof(DivideByZeroException))]
+        public void DivideByZeroTest()
+        {
+            int number = 10;
+            number.DivideByZero();
+            //Assert verificado por 
+        }
     }
 }

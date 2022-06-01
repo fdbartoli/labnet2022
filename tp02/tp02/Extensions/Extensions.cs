@@ -15,9 +15,9 @@ namespace tp02.Extensions
 
         }   
         
-        public static float Division (this float dividendo, float divisor)
+        public static decimal Division (this int dividendo, int divisor)
         {
-            return dividendo / divisor;
+            return Math.Round((decimal)dividendo / (decimal)divisor, 2);
         }
 
         public static string AddMessage (this Exceptions.CustomException ex, string message)

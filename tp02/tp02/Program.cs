@@ -54,14 +54,14 @@ namespace tp02
                         break;
                     case "2":
                         Console.Clear();
-                        Console.WriteLine("División de dos números. \n");
+                        Console.WriteLine("División de dos números enteros. \n");
                         result = true;
                         try
                         {
                             Console.WriteLine("Ingrese el dividendo: ");
-                            float dividendo = float.Parse(Console.ReadLine());
+                            int dividendo = int.Parse(Console.ReadLine());
                             Console.WriteLine("Ingrese el divisor: ");
-                            float divisor = float.Parse(Console.ReadLine());
+                            int divisor = int.Parse(Console.ReadLine());
                             Console.WriteLine(dividendo.Division(divisor));
                         }
                         catch (DivideByZeroException ex)

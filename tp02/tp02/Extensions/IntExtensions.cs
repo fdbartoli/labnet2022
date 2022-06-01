@@ -15,7 +15,7 @@ namespace tp02.Extensions
 
         }   
         
-        public static float division (this float dividendo, float divisor)
+        public static float Division (this float dividendo, float divisor)
         {
             return dividendo / divisor;
         }

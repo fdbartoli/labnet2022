@@ -12,5 +12,11 @@ namespace tp02
         {
             throw new Exception();
         }
+
+        public static void ThrowCustomException()
+        {
+            throw new Exceptions.CustomException();
+        }
+
     }
 }

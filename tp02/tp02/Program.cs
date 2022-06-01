@@ -65,7 +65,15 @@ namespace tp02
                         }
                         break;
                     case "3":
-                        Console.WriteLine("dispara expeción");                      
+                        try
+                        {
+                            Logic.ThrowException();
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("Mensaje de la excepción: {0}", ex.Message);
+                            Console.WriteLine("Tipo de excepción: {0}",ex.GetType());
+                        }                  
                         break;
                     default:
                         Console.WriteLine("Opción inválida, vuelva a intentar");

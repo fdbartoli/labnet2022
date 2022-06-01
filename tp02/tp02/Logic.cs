@@ -10,7 +10,7 @@ namespace tp02
     {
         public static void ThrowException()
         {
-            throw new FormatException();
+            throw new Exception();
         }
     }
 }

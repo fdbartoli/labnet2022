@@ -39,7 +39,7 @@ namespace tp02
                             Console.WriteLine(ex.Message);
                         }finally
                         {
-                            Console.WriteLine("Fin del intento.");
+                            Console.WriteLine("Fin de la operación.");
                         }
                         break;
                     case "2":
@@ -61,7 +61,7 @@ namespace tp02
                         }
                         finally
                         {
-                            Console.WriteLine("Fin del intento.");
+                            Console.WriteLine("Fin de la operación.");
                         }
                         break;
                     case "3":
@@ -74,6 +74,17 @@ namespace tp02
                             Console.WriteLine("Mensaje de la excepción: {0}", ex.Message);
                             Console.WriteLine("Tipo de excepción: {0}",ex.GetType());
                         }                  
+                        break;
+                    case "4":
+                        try
+                        {
+                            throw new Exceptions.CustomException();
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("Mensaje de la excepción: {0}", ex.Message);
+                            Console.WriteLine("Tipo de excepción: {0}", ex.GetType());
+                        }
                         break;
                     default:
                         Console.WriteLine("Opción inválida, vuelva a intentar");

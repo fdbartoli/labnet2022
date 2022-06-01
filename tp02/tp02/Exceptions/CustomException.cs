@@ -8,15 +8,9 @@ namespace tp02.Exceptions
 {
     public class CustomException : Exception
     {
-        public CustomException():base("Se lanzó una excepción personalizada")
+        public CustomException():base($"Excepción personalizada")
         {
 
         }
-
-        public new string Message()
-        {
-            return "Se lanzó una excepción personalizada";
-        }
-
     }
 }

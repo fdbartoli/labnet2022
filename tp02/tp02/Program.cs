@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -101,8 +102,8 @@ namespace tp02
                         }
                         catch (Exceptions.CustomException ex)
                         {
-                            Console.WriteLine("Mensaje de la excepción: {0}", ex.Message());
                             Console.WriteLine("Tipo de excepción: {0}", ex.GetType());
+                            MessageBox.Show(ex.AddMessage("Mensaje personalizado!..."), "Ejercicio 4");
                         }
                         break;
                     case "5":

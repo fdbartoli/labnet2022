@@ -239,7 +239,6 @@ namespace Tp04.EntityFramework.UI
                 ShippersLogic shippersLogic = new ShippersLogic();
                 Console.WriteLine("Ingrese ID del shipper a actualizar: ");
                 int id = int.Parse(Console.ReadLine());
-
                 Console.WriteLine("Ingrese el nuevo nombre de la compañía");
                 string companyName = Console.ReadLine();
                 Console.WriteLine("Ingrese el nuevo número de teléfono");
@@ -272,7 +271,7 @@ namespace Tp04.EntityFramework.UI
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Ocurrio un error inesperado.");
+                Console.WriteLine("Ocurrio un error inesperado.", ex.Message);
             }
 
         }

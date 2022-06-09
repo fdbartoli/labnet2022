@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Tp04.EntityFramework.Data;
 using Tp04.EntityFramework.Entities;
+using Tp04.EntityFramework.Utils;
+
 
 namespace Tp04.EntityFramework.Logic
 {
@@ -31,10 +33,19 @@ namespace Tp04.EntityFramework.Logic
         public void Update(Shippers shippers)
         {
             var shipperUpdate = _context.Shippers.Find(shippers.ShipperID);
-            
+            if (shipperUpdate != null)
+            {
                 shipperUpdate.CompanyName = shippers.CompanyName;
                 shipperUpdate.Phone = shippers.Phone;
                 _context.SaveChanges();
+            }
+            else
+            {
+                Console.WriteLine("Id inexistente, intente nuevamente.");
+            }
+            
+
+
         }
     }
 }

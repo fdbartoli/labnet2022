@@ -32,9 +32,16 @@ namespace Tp04.EntityFramework.Logic
         public void Update(Suppliers supplier)
         {
             var suppliersUpdate = _context.Suppliers.Find(supplier.SupplierID);
-            suppliersUpdate.CompanyName = supplier.CompanyName;
-            suppliersUpdate.ContactName = supplier.ContactName;
-            _context.SaveChanges();
+            if (suppliersUpdate != null) {
+                suppliersUpdate.CompanyName = supplier.CompanyName;
+                suppliersUpdate.ContactName = supplier.ContactName;
+                _context.SaveChanges();
+            }
+            else
+            {
+                Console.WriteLine("ID inexistente, intente nuevamente.");
+            }
+            
         }
     }
 }

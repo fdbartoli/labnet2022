@@ -8,19 +8,32 @@ using Tp04.EntityFramework.Entities;
 
 namespace Tp04.EntityFramework.Logic
 {
-    public class ShippersLogic
+    public class ShippersLogic : BaseLogic, ILogic<Shippers>
     {
-        private readonly NortwindContext _context;
-
-        public ShippersLogic()
+        public void Add(Shippers shipper)
         {
-            _context = new NortwindContext();   
+            _context.Shippers.Add(shipper);
+            _context.SaveChanges();
         }
 
         public List<Shippers> GetAll()
         {
             return _context.Shippers.ToList();
         }
+           
+        public void Remove(int id)
+        {
+            var ShipperToRemove = _context.Shippers.First(s => s.ShipperID == id);
+            _context.Shippers.Remove(ShipperToRemove);
+            _context.SaveChanges();
+        }
 
+        public void Update(Shippers shippers)
+        {
+            var shipperUpdate = _context.Shippers.Find(shippers.ShipperID);
+            shipperUpdate.CompanyName = shippers.CompanyName;
+            shipperUpdate.Phone = shippers.Phone;
+            _context.SaveChanges();
+        }
     }
 }

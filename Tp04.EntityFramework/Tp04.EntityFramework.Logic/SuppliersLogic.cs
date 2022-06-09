@@ -8,13 +8,13 @@ using Tp04.EntityFramework.Entities;
 
 namespace Tp04.EntityFramework.Logic
 {
-    public class SuppliersLogic
+    public class SuppliersLogic : BaseLogic, ILogic<Suppliers>
     {
-        private readonly NortwindContext _context;
 
-        public SuppliersLogic()
+        public void Add(Suppliers newItem)
         {
-            _context = new NortwindContext();
+            _context.Suppliers.Add(newItem);
+            _context.SaveChanges();
         }
 
         public List<Suppliers> GetAll()
@@ -22,7 +22,19 @@ namespace Tp04.EntityFramework.Logic
             return _context.Suppliers.ToList();
         }
 
+        public void Remove(int id)
+        {
+            var supplierToRemove = _context.Suppliers.First(s => s.SupplierID == id);
+            _context.Suppliers.Remove(supplierToRemove);
+            _context.SaveChanges();
+        }
+
+        public void Update(Suppliers supplier)
+        {
+            var suppliersUpdate = _context.Suppliers.Find(supplier.SupplierID);
+            suppliersUpdate.CompanyName = supplier.CompanyName;
+            suppliersUpdate.ContactName = supplier.ContactName;
+            _context.SaveChanges();
+        }
     }
-
-
 }

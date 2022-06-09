@@ -278,6 +278,7 @@ namespace Tp04.EntityFramework.UI
 
         static void UpdateSupplier()
         {
+            Console.Clear();
             SuppliersLogic suppliersLogic = new SuppliersLogic();
             Console.WriteLine("Modificar registro Supplier");
             Console.WriteLine("Ingrese ID del Supplier a modificar");

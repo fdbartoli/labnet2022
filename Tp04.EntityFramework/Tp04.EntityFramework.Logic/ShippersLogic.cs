@@ -31,9 +31,10 @@ namespace Tp04.EntityFramework.Logic
         public void Update(Shippers shippers)
         {
             var shipperUpdate = _context.Shippers.Find(shippers.ShipperID);
-            shipperUpdate.CompanyName = shippers.CompanyName;
-            shipperUpdate.Phone = shippers.Phone;
-            _context.SaveChanges();
+            
+                shipperUpdate.CompanyName = shippers.CompanyName;
+                shipperUpdate.Phone = shippers.Phone;
+                _context.SaveChanges();
         }
     }
 }

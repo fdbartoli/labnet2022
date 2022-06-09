@@ -69,6 +69,10 @@
       <Project>{6A159895-4397-4009-A4C0-2C8B307C29E1}</Project>
       <Name>Tp04.EntityFramework.Logic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Tp04.EntityFramework.Utils\Tp04.EntityFramework.Utils.csproj">
+      <Project>{7F4D37E9-04CD-4E25-A4C6-F88969B43AAD}</Project>
+      <Name>Tp04.EntityFramework.Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

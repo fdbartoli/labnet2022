@@ -30,8 +30,8 @@ namespace Tp05.Linq.Logic
         public List<CustomerOrder> CustomerJoinOrdersDate()
         {
             var query = from order in context.Orders
-                        join customer in context.Customers on
-                        order.CustomerID equals customer.CustomerID
+                        join customer in context.Customers
+                        on order.CustomerID equals customer.CustomerID
                         where customer.Region == "WA" && order.OrderDate > new DateTime(1997, 1, 1)
                         select new CustomerOrder
                         {
@@ -50,6 +50,20 @@ namespace Tp05.Linq.Logic
                          select customer).Take(3);
             return query.ToList();
 
+        }
+
+        public List<CustomerOrder> GroupCustomers()
+        {
+            var query = from Customers in context.Customers
+                        join Orders in context.Orders
+                        on Customers.CustomerID equals Orders.CustomerID
+                        group Orders by Customers into e
+                        select new CustomerOrder
+                        {
+                            Customer = e.Key,
+                            Quantity = e.Count()
+                        };
+            return query.ToList();
         }
 
 

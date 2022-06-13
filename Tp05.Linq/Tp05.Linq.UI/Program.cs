@@ -18,7 +18,7 @@ namespace Tp05.Linq.UI
             CategoriesLogic categoriesLogic = new CategoriesLogic();
 
             //ejercicio 1
-            Console.WriteLine("Devolver un objeto Customer");
+            Console.WriteLine("Devolver un objeto Customer\n");
             Console.WriteLine(customerLogic.ShowObjectCustomer().ContactName);
 
 
@@ -28,7 +28,7 @@ namespace Tp05.Linq.UI
 
             //ejercicio 2
             Console.Clear();
-            Console.WriteLine("Devolver todos los productos sin stock");
+            Console.WriteLine("Devolver todos los productos sin stock\n");
 
             foreach (var item in productsLogic.OutOfSotck())
             {
@@ -41,7 +41,7 @@ namespace Tp05.Linq.UI
 
             //ejercicio 3
             Console.Clear();
-            Console.WriteLine("Devolver todos los productos que tienen stock y que cuestan más de 3 por unidad");
+            Console.WriteLine("Devolver todos los productos que tienen stock y que cuestan más de 3 por unidad\n");
 
             foreach (var item in productsLogic.WithStockExpensiveThanThree())
             {
@@ -54,7 +54,7 @@ namespace Tp05.Linq.UI
 
             //ejercicio 4
             Console.Clear();
-            Console.WriteLine("Devolver los Customers de la región WA");
+            Console.WriteLine("Devolver los Customers de la región WA\n");
 
             foreach (var item in customerLogic.CustomersFromWa())
             {
@@ -67,7 +67,7 @@ namespace Tp05.Linq.UI
 
             //ejercicio 5
             Console.Clear();
-            Console.WriteLine("Devolver el primer elemento o nulo de una lista de productos donde el ID de producto sea igual a 789");
+            Console.WriteLine("Devolver el primer elemento o nulo de una lista de productos donde el ID de producto sea igual a 789\n");
 
             Console.WriteLine(productsLogic.FirstByIdOrNUll(789));
 
@@ -79,7 +79,7 @@ namespace Tp05.Linq.UI
 
             //ejercicio 6
             Console.Clear();
-            Console.WriteLine("Devolver los nombre de los Customers. Mostrarlos en Mayuscula y en Minuscula.");
+            Console.WriteLine("Devolver los nombre de los Customers. Mostrarlos en Mayuscula y en Minuscula.\n");
 
             foreach (var item in customerLogic.CustomerLowerCase())
             {
@@ -93,7 +93,7 @@ namespace Tp05.Linq.UI
 
             //ejercicio 7
             Console.Clear();
-            Console.WriteLine("Devolver Join entre Customers y Orders donde los customer sean de la Region WA y la fecha de orden sea mayor a 1/1/1997");
+            Console.WriteLine("Devolver Join entre Customers y Orders donde los customer sean de la Region WA y la fecha de orden sea mayor a 1/1/1997\n");
 
             foreach (var item in customerLogic.CustomerJoinOrdersDate())
             {
@@ -106,7 +106,7 @@ namespace Tp05.Linq.UI
 
             //ejercicio 8
             Console.Clear();
-            Console.WriteLine("Devolver los primeros 3 Customers de la  Región WA");
+            Console.WriteLine("Devolver los primeros 3 Customers de la  Región WA\n");
 
             foreach (var item in customerLogic.CustomersTake3WA())
             {
@@ -120,7 +120,7 @@ namespace Tp05.Linq.UI
 
             //ejercicio 9
             Console.Clear();
-            Console.WriteLine("Devolver lista de productos ordenados por nombre");
+            Console.WriteLine("Devolver lista de productos ordenados por nombre\n");
 
             foreach (var item in productsLogic.ProductsOrderByName())
             {
@@ -133,7 +133,7 @@ namespace Tp05.Linq.UI
 
             //ejercicio 10
             Console.Clear();
-            Console.WriteLine("Devolver lista de productos ordenados por stock de mayor a menor");
+            Console.WriteLine("Devolver lista de productos ordenados por stock de mayor a menor\n");
 
             foreach (var item in productsLogic.ProductsOrderByStock())
             {
@@ -141,13 +141,13 @@ namespace Tp05.Linq.UI
             }
 
             Console.WriteLine("--------------------------------------------------");
-            Console.WriteLine("Presione cualquier tecla para ver el próximo ejercicio");
+            Console.WriteLine("Presione cualquier tecla para ver el próximo ejercicio\n");
             Console.ReadKey();
 
             //ejercicio 11
 
             Console.Clear();
-            Console.WriteLine("Devolver las distintas categorías asociadas a los productos");
+            Console.WriteLine("Devolver las distintas categorías asociadas a los productos\n");
 
             foreach (var item in categoriesLogic.CategoriesPrdudct())
             {
@@ -161,15 +161,26 @@ namespace Tp05.Linq.UI
 
             //ejercicio 12
             Console.Clear();
-            Console.WriteLine("Devolver el primer elemento de una lista de productos");
+            Console.WriteLine("Devolver el primer elemento de una lista de productos\n");
 
-            Console.WriteLine(productsLogic.FirstProduct().ProductName ); 
+            Console.WriteLine(productsLogic.FirstProduct().ProductName);
 
             Console.WriteLine("--------------------------------------------------");
             Console.WriteLine("Presione cualquier tecla para ver el próximo ejercicio");
             Console.ReadKey();
 
             //ejercicio 13
+            Console.Clear();
+            Console.WriteLine("Devolver los customer con la cantidad de ordenes asociadas\n");
+
+            foreach (var item in customerLogic.GroupCustomers())
+            {
+                Console.WriteLine($"Contacto del Customer {item.Customer.ContactName} - Cantidad de ordenes: {item.Quantity}" );
+            }
+
+            Console.WriteLine("\n\n*******¡¡¡¡FIN DEL TP!!!!*********");
+            Console.ReadKey();
+
 
         }
     }

@@ -1,0 +1,83 @@
+:root {
+  --blueMidnight: #140152;
+  --blueDuke: #0d00a4;
+  --blueNavy: #22007c;
+  --blueMedium: #7d83ff;
+  --fuete: "Poppins", sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--blanco);
+  font-family: var(--fuete);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.contenedor {
+  margin: 0 auto;
+  max-width: 768px;
+  width: 40%;
+}
+
+.formulario {
+  padding: 50px;
+  background-image: url("img/background.jpg");
+  /* background-color: var(--blueMedium); */
+}
+
+.textoform h2 {
+  font-size: 60px;
+  text-align: center;
+}
+
+.textoform p {
+  text-align: center;
+}
+
+.input label {
+  display: block;
+  font-size: 20;
+  margin: 15px 0;
+}
+
+.input input {
+  width: 100%;
+  padding: 10px 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.textoform h2,
+.input label,
+p {
+  color: var(--blanco);
+}
+
+.input input[type="submit"],
+input[type="button"] {
+  background-color: rgb(173, 204, 230);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  margin-top: 5px;
+  transition: background-color 0.4s ease-in-out;
+}
+
+.input input[type="submit"]:hover,
+input[type="button"]:hover {
+  cursor: pointer;
+  background-color: var(--blueDuke);
+}

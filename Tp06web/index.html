@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de contacto -TP06</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+
+  </head>
+  <body>
+    <div class="contenedor-formulario contenedor">
+      <form action="" id="formulario" class="formulario">
+        <div class="textoform">
+          <h2>Bienvenido</h2>
+          <p>Ingresar información personal</p>
+        </div>
+
+        <div class="input">
+          <label for="nombre">Nombre</label>
+          <input placeholder="Ingresar nombre" type="text" id="nombre" />
+        </div>
+        <div class="input">
+          <label for="apellido">Apellido</label>
+          <input placeholder="Ingresar nombre" type="text" id="apellido" />
+        </div>
+        <div class="input">
+          <label for="email">Email</label>
+          <input placeholder="Ingresar E-mail" type="email" id="email" />
+        </div>
+        <div class="input">
+          <label for="fechanacimiento">Fecha de nacimiento</label>
+          <input type="date" id="fechanacimiento" min="1900-01-01" max="2022-12-31">
+          <h2 id="edad">Tu edad es:</h2>
+        </div>
+        <div class="input">
+          <p id="error"></p>
+        </div>
+        <div class="input">
+          <input type="submit" value="Enviar" id="enviar" />
+        </div>
+        <div class="input">
+          <input type="button" value="Borrar datos" id="limpiar" />
+        </div>
+        <div class="input">
+          <a href=https://github.com/fdbartoli/labnet2022/tree/tp06_web>
+            <input type="button" value="Ver repositorio con código fuente" id="repo">
+        </a>
+        </div>
+      </form>
+    </div>
+    <script src="scripts.js""></script>
+  </body>
+</html>

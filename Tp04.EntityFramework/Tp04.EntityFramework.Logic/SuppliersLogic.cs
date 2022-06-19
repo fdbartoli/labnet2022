@@ -34,6 +34,7 @@ namespace Tp04.EntityFramework.Logic
             var actualizarSupplier = _context.Suppliers.Find(supplier.SupplierID);
             actualizarSupplier.CompanyName = supplier.CompanyName;
             actualizarSupplier.ContactName = supplier.ContactName;
+            actualizarSupplier.Phone = supplier.Phone;
             _context.SaveChanges();
         }
 

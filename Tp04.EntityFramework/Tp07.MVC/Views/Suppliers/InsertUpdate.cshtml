@@ -1,22 +1,43 @@
 ﻿@model Tp07.MVC.Models.SuppliersView
+
 @{
-    ViewBag.Title = "Suppliers Page";
+    bool add;
+    if (Model == null)
+    {
+        add = true;
+    }
+    else
+    {
+        add = (Model.Id == 0) ? true : false;
+    }
+    string name = (add) ? "Insert" : "Edit";
+    ViewBag.Title = name + " Supplier";
 }
 
-<h1>Insert Or Update Suppliers</h1>
+<h2>@ViewBag.Title</h2>
+
 
 @using (Html.BeginForm("InsertUpdate", "Suppliers", FormMethod.Post))
 {
     <div>
-        <label>Company Name: </label> @Html.TextBoxFor(s => s.CompanyName)
-        <label>@Html.ValidationMessageFor(s => s.CompanyName)</label>
+        <label>Company Name: </label><br />@Html.TextBoxFor(s => s.CompanyName)
+        @Html.ValidationMessageFor(s => s.CompanyName)
+
     </div>
     <div>
-        <label>Contact Name: </label> @Html.TextBoxFor(s => s.ContactName)
-        <label>@Html.ValidationMessageFor(s => s.ContactName)</label>
+        <br />
+        <label>Contact Name: </label><br /> @Html.TextBoxFor(s => s.ContactName)
+        @Html.ValidationMessageFor(s => s.ContactName)
     </div>
     <div>
-        <input type="submit" class="btn btn-success" value="Guardar" />
+        <br />
+        <label>Phone Number: </label><br /> @Html.TextBoxFor(s => s.Phone)
+        @Html.ValidationMessageFor(s => s.Phone)
+    </div>
+    <div>
+        <br />
+        <input type="submit" class="btn btn-success" value=@name />
+        @Html.ActionLink("Cancel", "Index","" ,new { @class = "btn btn-success" })
     </div>
 
 

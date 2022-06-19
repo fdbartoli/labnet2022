@@ -6,13 +6,15 @@
 
 <h1>Suppliers NorthWind DB</h1>
 
-<table class="table">
+<table class="table table-hover">
     <tr>
     <thead>
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Company Name</th>
             <th scope="col">Contact Name</th>
+            <th scope="col">Contact Phone</th>
+            <th scope="col">Action</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
@@ -23,13 +25,14 @@
             <th scope="row">@supplier.Id</th>
             <td>@supplier.CompanyName</td>
             <td>@supplier.ContactName</td>
-            <td>@Html.ActionLink("Borrar", "Delete", new { id = supplier.Id }, new { onclick = "return confirm('¿Desea eliminar este registro?')" })</td>
-            <td>@Html.ActionLink("Modificar", "InsertUpdate", new { id = supplier.Id }, new { onclick = "return confirm('¿Desea modificar este registro?')" })</td>
+            <td>@supplier.Phone</td>            
+            <td>@Html.ActionLink("Remove", "Delete", new { id = supplier.Id }, new { onclick = "return confirm('Are you sure you want to delete this Item?')" })</td>
+            <td>@Html.ActionLink("Edit", "InsertUpdate", new { id = supplier.Id }, new { onclick = "return confirm('Are you sure you want to edit this Item?')" })</td>
         </tr>
     }
     </tbody>
 </table>
 
 <div>
-    @Html.ActionLink("Insertar Nuevo Supplier", "InsertUpdate", new {id = 0})
+    @Html.ActionLink("Add new Supplier", "InsertUpdate", new {id = 0}, new { @class = "btn btn-success" })
 </div>

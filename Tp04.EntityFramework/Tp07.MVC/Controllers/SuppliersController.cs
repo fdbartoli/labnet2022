@@ -20,6 +20,7 @@ namespace Tp07.MVC.Controllers
                 Id = s.SupplierID,
                 CompanyName = s.CompanyName,
                 ContactName = s.ContactName,
+                Phone = s.Phone
             }).ToList();
             return View(suppliersView);
         }
@@ -56,6 +57,7 @@ namespace Tp07.MVC.Controllers
                         Id = supplier.SupplierID,
                         CompanyName = supplier.CompanyName,
                         ContactName = supplier.ContactName,
+                        Phone = supplier.Phone
                     };
                     return View(suppliersView);
                 }
@@ -81,6 +83,7 @@ namespace Tp07.MVC.Controllers
                     SupplierID = supplier.Id,
                     CompanyName = supplier.CompanyName,
                     ContactName = supplier.ContactName,
+                    Phone = supplier.Phone,
                 };
                 if (supplier.Id == 0)
                 {

@@ -1,0 +1,13 @@
+﻿@model Tp07.MVC.Models.SuppliersView
+@{
+    ViewBag.Title = "Suppliers Page";
+}
+
+<h1>Update</h1>
+
+@using(Html.BeginForm("Update", "Suppliers", FormMethod.Post))
+
+{   
+    <label>Nuevo Company Name: </label> @Html.TextBoxFor(s => s.CompanyName);
+    <input type="submit" class="btn btn-success" value="Guardar" />
+}

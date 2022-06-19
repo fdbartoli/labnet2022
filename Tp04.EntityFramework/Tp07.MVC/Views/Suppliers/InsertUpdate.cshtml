@@ -1,0 +1,23 @@
+﻿@model Tp07.MVC.Models.SuppliersView
+@{
+    ViewBag.Title = "Suppliers Page";
+}
+
+<h1>Insert Or Update Suppliers</h1>
+
+@using (Html.BeginForm("InsertUpdate", "Suppliers", FormMethod.Post))
+{
+    <div>
+        <label>Company Name: </label> @Html.TextBoxFor(s => s.CompanyName)
+        <label>@Html.ValidationMessageFor(s => s.CompanyName)</label>
+    </div>
+    <div>
+        <label>Contact Name: </label> @Html.TextBoxFor(s => s.ContactName)
+        <label>@Html.ValidationMessageFor(s => s.ContactName)</label>
+    </div>
+    <div>
+        <input type="submit" class="btn btn-success" value="Guardar" />
+    </div>
+
+
+}

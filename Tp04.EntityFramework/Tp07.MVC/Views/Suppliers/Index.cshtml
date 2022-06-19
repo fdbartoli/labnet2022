@@ -1,0 +1,35 @@
+﻿@model List<Tp07.MVC.Models.SuppliersView>
+
+@{
+    ViewBag.Title = "Suppiers NorthWind";
+}
+
+<h1>Suppliers NorthWind DB</h1>
+
+<table class="table">
+    <tr>
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Company Name</th>
+            <th scope="col">Contact Name</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var supplier in Model)
+    {
+        <tr>
+            <th scope="row">@supplier.Id</th>
+            <td>@supplier.CompanyName</td>
+            <td>@supplier.ContactName</td>
+            <td>@Html.ActionLink("Borrar", "Delete", new { id = supplier.Id }, new { onclick = "return confirm('¿Desea eliminar este registro?')" })</td>
+            <td>@Html.ActionLink("Modificar", "InsertUpdate", new { id = supplier.Id }, new { onclick = "return confirm('¿Desea modificar este registro?')" })</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<div>
+    @Html.ActionLink("Insertar Nuevo Supplier", "InsertUpdate", new {id = 0})
+</div>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tp04.EntityFramework.Data;
-using Tp04.EntityFramework.Entities;
+using Tp04.EntityFramework.Entities; 
 using Tp04.EntityFramework.Utils;
 
 
@@ -30,22 +30,27 @@ namespace Tp04.EntityFramework.Logic
             _context.SaveChanges();
         }
 
-        public void Update(Shippers shippers)
+
+        public void Update(Shippers updateShipper)
         {
-            var shipperUpdate = _context.Shippers.Find(shippers.ShipperID);
-            if (shipperUpdate != null)
+            try
             {
-                shipperUpdate.CompanyName = shippers.CompanyName;
-                shipperUpdate.Phone = shippers.Phone;
-                _context.SaveChanges();
+                var bufferShippers = _context.Shippers.Find(updateShipper.ShipperID);
+                if (bufferShippers != null)
+                {
+                    bufferShippers.CompanyName = updateShipper.CompanyName;
+                    bufferShippers.Phone = updateShipper.Phone;
+                    _context.SaveChanges();
+                }
+                else
+                {
+                    throw new Exception("No se encontró shipper.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine("Id inexistente, intente nuevamente.");
+                throw ex;
             }
-            
-
-
         }
     }
 }

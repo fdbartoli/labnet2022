@@ -234,45 +234,45 @@ namespace Tp04.EntityFramework.UI
             
             Console.Clear();
             Console.WriteLine("Modificar registro Shipper");
-            try
-            {
-                ShippersLogic shippersLogic = new ShippersLogic();
-                Console.WriteLine("Ingrese ID del shipper a actualizar: ");
-                int id = int.Parse(Console.ReadLine());
-                Console.WriteLine("Ingrese el nuevo nombre de la compañía");
-                string companyName = Console.ReadLine();
-                Console.WriteLine("Ingrese el nuevo número de teléfono");
-                string phone = Console.ReadLine();
-                shippersLogic.Update(new Shippers
-                {
-                    CompanyName = companyName,
-                    Phone = phone,
-                    ShipperID = id
-                });
+            //try
+            //{
+                //ShippersLogic shippersLogic = new ShippersLogic();
+                //Console.WriteLine("Ingrese ID del shipper a actualizar: ");
+                //int id = int.Parse(Console.ReadLine());
+                //Console.WriteLine("Ingrese el nuevo nombre de la compañía");
+                //string companyName = Console.ReadLine();
+                //Console.WriteLine("Ingrese el nuevo número de teléfono");
+                //string phone = Console.ReadLine();
+                //shippersLogic.Update(new Shippers
+                //{
+                //    CompanyName = companyName,
+                //    Phone = phone,
+                //    ShipperID = id
+                //});
 
-            }
+            //}
 
-            catch (System.NullReferenceException  ex)
-            {
-                Console.WriteLine("error", ex.Message    );
-            }
-            catch (DbEntityValidationException ex)
-            {
-                Console.WriteLine("El nombre de la empresa es obligatorio!", ex.Message);
-            }
+            //catch (System.NullReferenceException  ex)
+            //{
+            //    Console.WriteLine("error", ex.Message    );
+            //}
+            //catch (DbEntityValidationException ex)
+            //{
+            //    Console.WriteLine("El nombre de la empresa es obligatorio!", ex.Message);
+            //}
 
-            catch (FormatException ex)
-            {
-                Console.WriteLine(ex.AddMessage());
-            }
-            catch (OverflowException ex)
-            {
-                Console.WriteLine(ex.AddMessage());
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Ocurrio un error inesperado.", ex.Message);
-            }
+            //catch (FormatException ex)
+            //{
+            //    Console.WriteLine(ex.AddMessage());
+            //}
+            //catch (OverflowException ex)
+            //{
+            //    Console.WriteLine(ex.AddMessage());
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine("Ocurrio un error inesperado.", ex.Message);
+            //}
 
         }
 

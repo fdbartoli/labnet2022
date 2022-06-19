@@ -31,17 +31,17 @@ namespace Tp04.EntityFramework.Logic
 
         public void Update(Suppliers supplier)
         {
-            var suppliersUpdate = _context.Suppliers.Find(supplier.SupplierID);
-            if (suppliersUpdate != null) {
-                suppliersUpdate.CompanyName = supplier.CompanyName;
-                suppliersUpdate.ContactName = supplier.ContactName;
-                _context.SaveChanges();
-            }
-            else
-            {
-                Console.WriteLine("ID inexistente, intente nuevamente.");
-            }
-            
+            var actualizarSupplier = _context.Suppliers.Find(supplier.SupplierID);
+            actualizarSupplier.CompanyName = supplier.CompanyName;
+            actualizarSupplier.ContactName = supplier.ContactName;
+            _context.SaveChanges();
         }
+
+        public Suppliers GetOneByID (int id)
+        {
+            return _context.Suppliers.Find(id);
+        }
+
     }
 }
+

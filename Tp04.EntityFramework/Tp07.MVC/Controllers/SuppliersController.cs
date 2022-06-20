@@ -33,12 +33,12 @@ namespace Tp07.MVC.Controllers
                 return RedirectToAction("Index");
             }
             catch (System.Data.Entity.Infrastructure.DbUpdateException ex)
-            
+
             {
                 return RedirectToAction("ErrorFK", "Error");
             }
         }
-        
+
 
         public ActionResult InsertUpdate(int id)
         {
@@ -51,7 +51,7 @@ namespace Tp07.MVC.Controllers
             {
                 try
                 {
-                    Suppliers supplier = logic.GetAll().FirstOrDefault(s=>s.SupplierID == id);
+                    Suppliers supplier = logic.GetAll().FirstOrDefault(s => s.SupplierID == id);
                     SuppliersView suppliersView = new SuppliersView
                     {
                         Id = supplier.SupplierID,
@@ -61,7 +61,7 @@ namespace Tp07.MVC.Controllers
                     };
                     return View(suppliersView);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     return RedirectToAction("Index", "Error");
                 }
@@ -97,9 +97,83 @@ namespace Tp07.MVC.Controllers
             }
             catch (Exception ex)
             {
-                return RedirectToAction ("Index", "Error");
+                return RedirectToAction("Index", "Error");
             }
-            
+
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//public ActionResult Insert()
+//{
+//    return View();
+//}
+
+//[HttpPost]
+//public ActionResult Insert(SuppliersView suppliersView)
+//{
+
+//    Suppliers suppliersEntity = new Suppliers
+//    {
+//        CompanyName = suppliersView.CompanyName
+//    };
+//    if (!ModelState.IsValid)
+//    {
+//        return View(suppliersView);
+//    }
+
+//    try
+//    {
+//        logic.Add(suppliersEntity);
+//        return RedirectToAction("Index");
+//    }
+//    catch (Exception ex)
+//    {
+//        return RedirectToAction("Index", "Error");
+//    }
+//}
+
+//[HttpPost]
+//public ActionResult Update(SuppliersView suppliersView)
+//{
+//    Suppliers suppliersEntities = new Suppliers
+//        {
+//        SupplierID = suppliersView.Id,
+//        CompanyName = suppliersView.CompanyName,
+//        };
+//    if (!ModelState.IsValid)
+//    {
+//        return View(suppliersView);
+//    }
+
+
+//    try
+//    {
+//        logic.Update(suppliersEntities);
+//        return RedirectToAction("Index");
+//    }
+//    catch (Exception ex)
+//    {
+//        return RedirectToAction("Index", "Error");
+//    }
+//}
+
+

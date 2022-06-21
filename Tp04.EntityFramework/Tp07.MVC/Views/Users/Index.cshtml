@@ -1,0 +1,28 @@
+﻿@{ 
+    ViewBag.Tite = "Users Api";
+
+    <table class="table table-hover">
+        <tr>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Last Name</th>
+                <th>Country</th>
+                <th>E-mail</th>
+                <th>Picture</th>
+            </tr>
+        </thead>
+
+        @foreach (var user in Model.results)
+        {
+            <tr>
+                <td>@user.name.first</td>
+                <td>@user.name.last</td>
+                <td>@user.location.country</td>
+                <td>@user.email</td>
+                <td><img src="@user.picture.medium" /></td>
+            </tr>
+        }
+    </table>
+
+}

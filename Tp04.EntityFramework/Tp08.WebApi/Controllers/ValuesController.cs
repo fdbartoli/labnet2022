@@ -25,22 +25,37 @@ namespace Tp08.WebAPI.Controllers
                     Id = s.SupplierID,
                     CompanyName = s.CompanyName,
                     ContactName = s.ContactName,
-                    Phone = s.Phone
+                    Phone =   s.Phone
                 }).ToList();
 
                 return Ok(suppliersView);
                        
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return InternalServerError();
+                return Content(HttpStatusCode.NotFound, e.Message);
             }
         }
 
         // GET api/values/5
-        public string Get(int id)
+        public IHttpActionResult Get(int id)
         {
-            return "value";
+            try
+            {
+                Suppliers supplier = logic.GetOneByID(id);
+                SuppliersView supplierResponse = new SuppliersView
+                {
+                    Id = supplier.SupplierID,
+                    CompanyName = supplier.CompanyName,
+                    ContactName = supplier.ContactName,
+                    Phone = supplier.Phone,
+                };
+                return Ok(supplierResponse);
+            }
+            catch (Exception e)
+            {
+                return Content(HttpStatusCode.NotFound, e.Message);
+            }
         }
 
         // POST api/values

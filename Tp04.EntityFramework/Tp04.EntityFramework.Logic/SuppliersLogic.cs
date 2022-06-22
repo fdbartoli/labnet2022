@@ -40,7 +40,7 @@ namespace Tp04.EntityFramework.Logic
 
         public Suppliers GetOneByID (int id)
         {
-            return _context.Suppliers.Find(id);
+            return _context.Suppliers.FirstOrDefault(s =>s.SupplierID == id);
         }
 
     }

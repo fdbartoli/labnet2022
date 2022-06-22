@@ -1,0 +1,19 @@
+﻿@model Tp07.MVC.Models.DogView
+@{
+    ViewBag.Title = "DOGS API";
+}
+
+<div class="text-center">
+
+    <h2>Dogs API.</h2>
+    <h3>Watch random images of dogs! </h3>
+
+    <div>
+        <img src="@Html.Raw(Model.Picture)" , style=" max-width:40%; max-height:40%;" />
+    </div> <br>
+
+           <div>
+               @Html.ActionLink("Another pic!", "Index", "", new { @class = "btn btn-success" })
+               @Html.ActionLink("Enough pictures for now", "Index", "Home", "", new { @class = "btn btn-success" })
+        </div>
+</div>

@@ -33,7 +33,7 @@ namespace Tp08.WebAPI.Controllers
             }
             catch (Exception e)
             {
-                return Content(HttpStatusCode.NotFound, e.Message);
+                return Content(HttpStatusCode.BadRequest, e.Message);
             }
         }
 
@@ -62,15 +62,56 @@ namespace Tp08.WebAPI.Controllers
         [HttpPost]
         public IHttpActionResult Post([FromUri] SuppliersView suppliersRequest)
         {
-            return "value";
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            try
+            {
+                Suppliers suppliersEntity = new Suppliers
+                {
+                    CompanyName = suppliersRequest.CompanyName,
+                    ContactName = suppliersRequest.ContactName,
+                    Phone = suppliersRequest.Phone,
+                };
+                logic.Add(suppliersEntity);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return Content(HttpStatusCode.BadRequest, e.Message);
+            }
         }
 
         // PUT api/values/5
-        public void Put(int id, [FromBody] string value)
+        [HttpPatch]
+        public IHttpActionResult Edit([FromBody] SuppliersView suppliersRequest)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            try
+            {
+                Suppliers suppliersEntity = new Suppliers
+                {
+                    SupplierID = suppliersRequest.Id,
+                    CompanyName = suppliersRequest.CompanyName,
+                    ContactName = suppliersRequest.ContactName,
+                    Phone = suppliersRequest.Phone,
+                };
+                logic.Update(suppliersEntity);
+                return Ok();
+
+            }
+            catch (Exception e)
+            {
+                return Content(HttpStatusCode.NotFound, e.Message);
+            }
         }
 
         // DELETE api/values/5
+        [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
             try

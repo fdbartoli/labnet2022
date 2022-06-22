@@ -83,12 +83,13 @@ namespace Tp08.WebAPI.Controllers
         }
 
         // PUT api/values/5
-        [HttpPatch]
-        public IHttpActionResult Edit([FromBody] SuppliersView suppliersRequest)
+        [HttpPut]
+        public IHttpActionResult Edit([FromUri] SuppliersView suppliersRequest)
         {
+
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                return BadRequest("Error, ID vacío");
             }
             try
             {
@@ -110,7 +111,6 @@ namespace Tp08.WebAPI.Controllers
         }
 
         // DELETE api/values/5
-        [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
             try
@@ -120,7 +120,7 @@ namespace Tp08.WebAPI.Controllers
             }
             catch (Exception)
             {
-                return InternalServerError();
+                return Content(HttpStatusCode.NotFound, "ID vacío."); ;
             }
         }
     }

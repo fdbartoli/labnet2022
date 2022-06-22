@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Tp08.WebApi")]
+[assembly: AssemblyTitle("Tp08.WebAPI")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Tp08.WebApi")]
+[assembly: AssemblyProduct("Tp08.WebAPI")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("7e64f53d-7ecb-4fc3-935b-d3a2a95c81e4")]
+[assembly: Guid("e9fceacd-77a2-41b6-9368-6dd963a6eaad")]
 
 // Version information for an assembly consists of the following four values:
 //

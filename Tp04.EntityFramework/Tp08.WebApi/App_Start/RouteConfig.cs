@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Tp08.WebApi
+namespace Tp08.WebAPI
 {
     public class RouteConfig
     {

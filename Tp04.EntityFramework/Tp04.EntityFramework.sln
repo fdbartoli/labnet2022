@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tp04.EntityFramework.Utils"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tp07.MVC", "Tp07.MVC\Tp07.MVC.csproj", "{3EC7F485-36D8-4DE2-8FC4-11C48589A69D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tp08.WebAPI", "Tp08.WebAPI\Tp08.WebAPI.csproj", "{ECC22974-9BC3-428E-AF53-45ACF1188459}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{3EC7F485-36D8-4DE2-8FC4-11C48589A69D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EC7F485-36D8-4DE2-8FC4-11C48589A69D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EC7F485-36D8-4DE2-8FC4-11C48589A69D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECC22974-9BC3-428E-AF53-45ACF1188459}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECC22974-9BC3-428E-AF53-45ACF1188459}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECC22974-9BC3-428E-AF53-45ACF1188459}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECC22974-9BC3-428E-AF53-45ACF1188459}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

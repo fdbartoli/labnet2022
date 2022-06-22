@@ -4,15 +4,37 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Tp04.EntityFramework.Entities;
+using Tp04.EntityFramework.Logic;
+using Tp08.WebAPI.Models;
 
-namespace Tp08.WebApi.Controllers
+namespace Tp08.WebAPI.Controllers
 {
-    public class ValuesController : ApiController
+    public class SuppliersController : ApiController
     {
+        readonly SuppliersLogic logic = new SuppliersLogic();
+        
         // GET api/values
-        public IEnumerable<string> Get()
+        public IHttpActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            try
+            {
+                List<Suppliers> suppliers = logic.GetAll();
+                List<SuppliersView> suppliersView = suppliers.Select(s => new SuppliersView
+                {
+                    Id = s.SupplierID,
+                    CompanyName = s.CompanyName,
+                    ContactName = s.ContactName,
+                    Phone = s.Phone
+                }).ToList();
+
+                return Ok(suppliersView);
+                       
+            }
+            catch (Exception)
+            {
+                return InternalServerError();
+            }
         }
 
         // GET api/values/5
@@ -22,8 +44,10 @@ namespace Tp08.WebApi.Controllers
         }
 
         // POST api/values
-        public void Post([FromBody] string value)
+        [HttpPost]
+        public IHttpActionResult Post([FromUri] SuppliersView suppliersRequest)
         {
+            return "value";
         }
 
         // PUT api/values/5
@@ -32,8 +56,17 @@ namespace Tp08.WebApi.Controllers
         }
 
         // DELETE api/values/5
-        public void Delete(int id)
+        public IHttpActionResult Delete(int id)
         {
+            try
+            {
+                logic.Remove(id);
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return InternalServerError();
+            }
         }
     }
 }

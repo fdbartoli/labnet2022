@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
-using Tp08.WebApi.Areas.HelpPage.ModelDescriptions;
+using Tp08.WebAPI.Areas.HelpPage.ModelDescriptions;
 
-namespace Tp08.WebApi.Areas.HelpPage.Models
+namespace Tp08.WebAPI.Areas.HelpPage.Models
 {
     /// <summary>
     /// The model that represents an API displayed on the help page.

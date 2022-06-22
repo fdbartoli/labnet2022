@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace Tp08.WebApi
+namespace Tp08.WebAPI
 {
     public class FilterConfig
     {

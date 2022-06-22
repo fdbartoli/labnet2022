@@ -10,7 +10,7 @@ namespace Tp07.MVC.Controllers
 {
     public class SuppliersController : Controller
     {
-        SuppliersLogic logic = new SuppliersLogic();
+        readonly SuppliersLogic logic = new SuppliersLogic();
         // GET: Suppliers
         public ActionResult Index()
         {

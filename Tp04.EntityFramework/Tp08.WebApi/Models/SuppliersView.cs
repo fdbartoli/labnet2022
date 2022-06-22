@@ -1,6 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Web;
 
-namespace Tp08.WebApi.Models
+namespace Tp08.WebAPI.Models
 {
     public class SuppliersView
     {

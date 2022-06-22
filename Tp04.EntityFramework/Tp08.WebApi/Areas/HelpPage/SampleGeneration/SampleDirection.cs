@@ -1,4 +1,4 @@
-namespace Tp08.WebApi.Areas.HelpPage
+namespace Tp08.WebAPI.Areas.HelpPage
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response

@@ -12,8 +12,8 @@ namespace Tp08.WebAPI.Controllers
     public class SuppliersController : ApiController
     {
         readonly SuppliersLogic logic = new SuppliersLogic();
-        
-        // GET api/values
+
+ 
         public IHttpActionResult Get()
         {
             try
@@ -36,7 +36,7 @@ namespace Tp08.WebAPI.Controllers
             }
         }
 
-        // GET api/values/5
+
         public IHttpActionResult Get(int id)
         {
             try
@@ -57,9 +57,9 @@ namespace Tp08.WebAPI.Controllers
             }
         }
 
-        // POST api/values
+        // POST: Create
         [HttpPost]
-        public IHttpActionResult Post([FromUri] SuppliersView suppliersRequest)
+        public IHttpActionResult Post([FromBody] SuppliersView suppliersRequest)
         {
             if (!ModelState.IsValid)
             {
@@ -78,13 +78,13 @@ namespace Tp08.WebAPI.Controllers
             }
             catch (Exception e)
             {
-                return Content(HttpStatusCode.BadRequest, e.Message);
+                return InternalServerError();
             }
         }
 
-        // PUT api/values/5
-        [HttpPut]
-        public IHttpActionResult Edit([FromUri] SuppliersView suppliersRequest)
+        //PATCH: api/Suppliers/5
+        [HttpPatch]
+        public IHttpActionResult Edit([FromBody] SuppliersView suppliersRequest)
         {
 
             if (!ModelState.IsValid)
@@ -110,7 +110,8 @@ namespace Tp08.WebAPI.Controllers
             }
         }
 
-        // DELETE api/values/5
+        // DELETE api/Suppliers/5
+        [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
             try
@@ -120,7 +121,7 @@ namespace Tp08.WebAPI.Controllers
             }
             catch (Exception)
             {
-                return Content(HttpStatusCode.NotFound, "ID vacío."); ;
+                return Content(HttpStatusCode.NotFound, "No es posible eliminar este registro"); ;
             }
         }
     }

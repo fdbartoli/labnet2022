@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="col">
+    <h1>Ejemplo NgIf</h1>
+    <div class="col">
+      <button class="btn btn-primary" (click)="nombreActivo = !nombreActivo">
+        Activar if
+      </button>
+      <div *ngIf="nombreActivo">{{ nombre }}</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <h1>Ejemplo NgFor</h1>
+    <div *ngFor="let item of listaNombre; let i = index">
+      <p>{{ item }}</p>
+    </div>
+  </div>
+</div>

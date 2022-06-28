@@ -13,34 +13,66 @@ namespace Tp04.EntityFramework.Logic
 
         public void Add(Suppliers newItem)
         {
-            _context.Suppliers.Add(newItem);
-            _context.SaveChanges();
+            try
+            {
+                _context.Suppliers.Add(newItem);
+                _context.SaveChanges();
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public List<Suppliers> GetAll()
         {
+            try { 
             return _context.Suppliers.ToList();
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public void Remove(int id)
         {
+            try { 
             var supplierToRemove = _context.Suppliers.First(s => s.SupplierID == id);
             _context.Suppliers.Remove(supplierToRemove);
             _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public void Update(Suppliers supplier)
         {
+
+            try { 
             var actualizarSupplier = _context.Suppliers.Find(supplier.SupplierID);
             actualizarSupplier.CompanyName = supplier.CompanyName;
             actualizarSupplier.ContactName = supplier.ContactName;
             actualizarSupplier.Phone = supplier.Phone;
             _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public Suppliers GetOneByID (int id)
         {
+            try { 
             return _context.Suppliers.FirstOrDefault(s =>s.SupplierID == id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
     }

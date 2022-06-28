@@ -37,6 +37,11 @@ namespace Tp07.MVC.Controllers
             {
                 return RedirectToAction("ErrorFK", "Error");
             }
+            catch (Exception)
+            {
+                return RedirectToAction("Index", "Error");
+            }
+
         }
 
 

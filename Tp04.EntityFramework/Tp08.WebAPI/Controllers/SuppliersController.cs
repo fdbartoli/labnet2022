@@ -6,10 +6,13 @@ using System.Web.Http;
 using Tp04.EntityFramework.Entities;
 using Tp04.EntityFramework.Logic;
 using Tp08.WebAPI.Models;
+using System.Web.Http.Cors;
+
 
 namespace Tp08.WebAPI.Controllers
 {
-    public class SuppliersController : ApiController
+    [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
+    public class SuppliersController : ApiControllers
     {
         readonly SuppliersLogic logic = new SuppliersLogic();
 
@@ -119,10 +122,15 @@ namespace Tp08.WebAPI.Controllers
                 logic.Remove(id);
                 return Ok();
             }
+            catch (System.Data.Entity.Infrastructure.DbUpdateException ex)
+            {
+                return Content(HttpStatusCode.NotFound, "Este ID esta relacionado con otros campos");
+            }
             catch (Exception)
             {
                 return Content(HttpStatusCode.NotFound, "No es posible eliminar este registro"); ;
             }
+
         }
     }
 }

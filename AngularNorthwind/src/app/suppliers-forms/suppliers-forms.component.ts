@@ -18,9 +18,9 @@ export class SuppliersFormsComponent implements OnInit {
 
   ngOnInit(): void {
     this.formSuppliers = this.formBuilder.group({
-      companyName: new FormControl('', Validators.required),
-      password: new FormControl(''),
-      ContactName: new FormControl(''),
+      companyName: ['', Validators.required],
+      contactName: [''],
+      phone: [''],
     });
   }
 }

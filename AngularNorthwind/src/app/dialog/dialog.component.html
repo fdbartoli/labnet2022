@@ -1,0 +1,39 @@
+<h1 mat-dialog-title>Add Supplier</h1>
+<div mat-dialog-content>
+  <form [formGroup]="suppliersForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Company Name</mat-label>
+      <input
+        formControlName="companyName"
+        matInput
+        placeholder="Company Name"
+      />
+      <mat-icon matSuffix>check_circle</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Contact Name</mat-label>
+      <input
+        formControlName="contactName"
+        matInput
+        placeholder="Contact Name"
+      />
+      <mat-icon matSuffix>contacts</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Phone Number</mat-label>
+      <input formControlName="phone" matInput placeholder="Phone Number" />
+      <mat-icon matSuffix>phone</mat-icon>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-action [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+  <button
+    style="margin-left: 12px"
+    mat-raised-button
+    color="primary"
+    (click)="addProduct()"
+  >
+    Save
+  </button>
+</div>

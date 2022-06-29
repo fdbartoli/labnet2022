@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Suppliers } from '../models/Suppliers';
+import { SuppliersService } from '../services/suppliers.service';
 
 @Component({
   selector: 'app-suppliers',
@@ -7,11 +9,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./suppliers.component.css'],
 })
 export class SuppliersComponent implements OnInit {
-  nombre: string = 'Juan Perez';
-  listaNombre: string[] = ['jose', 'juan', 'jorge', 'javier'];
-  nombreActivo: boolean = true;
+  listadoSuppliers: Suppliers[] = [];
+  constructor(private suppliersService: SuppliersService) {}
 
-  constructor() {}
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.suppliersService.getsuppliers().subscribe((resp) => {
+      this.listadoSuppliers = resp;
+    });
+  }
 }

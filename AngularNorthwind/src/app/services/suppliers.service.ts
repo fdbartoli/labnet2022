@@ -14,4 +14,9 @@ export class SuppliersService {
     let endpoint = 'api/Suppliers';
     return this.http.post(environment.suppliers + endpoint, request);
   }
+
+  getsuppliers(): Observable<any> {
+    let endopoint = 'api/Suppliers';
+    return this.http.get(environment.suppliers + endopoint);
+  }
 }

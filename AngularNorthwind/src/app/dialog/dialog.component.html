@@ -1,6 +1,6 @@
 <h1 mat-dialog-title>Add Supplier</h1>
 <div mat-dialog-content>
-  <form [formGroup]="suppliersForm">
+  <form [formGroup]="suppliersForm" novalidate>
     <mat-form-field appearance="fill">
       <mat-label>Company Name</mat-label>
       <input
@@ -10,6 +10,9 @@
       />
       <mat-icon matSuffix>check_circle</mat-icon>
     </mat-form-field>
+    <small *ngIf="suppliersForm.controls['companyName'].invalid"
+      >Required Field</small
+    >
     <mat-form-field appearance="fill">
       <mat-label>Contact Name</mat-label>
       <input
@@ -32,6 +35,7 @@
     style="margin-left: 12px"
     mat-raised-button
     color="primary"
+    [disabled]="!suppliersForm.valid"
     (click)="addProduct()"
   >
     Save

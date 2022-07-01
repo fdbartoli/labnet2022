@@ -16,7 +16,17 @@ export class SuppliersService {
   }
 
   getsuppliers(): Observable<any> {
-    let endopoint = 'api/Suppliers';
-    return this.http.get(environment.suppliers + endopoint);
+    let endpoint = 'api/Suppliers';
+    return this.http.get(environment.suppliers + endpoint);
+  }
+
+  editSupplier(request: Suppliers) {
+    let endpoint = 'api/Suppliers';
+    return this.http.patch(environment.suppliers + endpoint, request);
+  }
+
+  deleteSupplier(id: number): Observable<any> {
+    let endpoint = 'api/Suppliers';
+    return this.http.delete(environment.suppliers + endpoint + '/' + id);
   }
 }

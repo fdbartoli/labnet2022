@@ -6,9 +6,9 @@ import { HeaderComponent } from './header/header.component';
 import { SuppliersFormsComponent } from './suppliers-forms/suppliers-forms.component';
 
 const routes: Routes = [
-  { path: '', component: SuppliersComponent },
+  { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'suppliersform', component: SuppliersFormsComponent },
+  { path: 'suppliers', component: SuppliersComponent },
 ];
 
 @NgModule({

@@ -8,12 +8,20 @@ import { DialogComponent } from '../dialog/dialog.component';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  actionBtn: string = 'Add Supplier';
   ngOnInit(): void {}
   constructor(private dialog: MatDialog) {}
 
   openDialog() {
-    this.dialog.open(DialogComponent, {
-      width: '50%',
-    });
+    this.dialog
+      .open(DialogComponent, {
+        width: '50%',
+      })
+      .afterClosed()
+      .subscribe((val) => {
+        if (val === 'save') {
+        }
+        window.location.reload();
+      });
   }
 }
